@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.online_bank.view.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_newLoanFragment"
+            app:destination="@id/newLoanFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loanInformationFragment"
+            app:destination="@id/loanInformationFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.online_bank.view.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/nav_graph" />
+        <argument
+            android:name="nameLogin"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="" />
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.online_bank.view.RegistrationFragment"
+        android:label="fragment_registration"
+        tools:layout="@layout/fragment_registration" >
+        <action
+            android:id="@+id/action_registrationFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/newLoanFragment"
+        android:name="com.example.online_bank.view.NewLoanFragment"
+        android:label="fragment_new_loan"
+        tools:layout="@layout/fragment_new_loan" >
+        <action
+            android:id="@+id/action_newLoanFragment_to_successfulLoanFragment"
+            app:destination="@id/successfulLoanFragment"
+            app:popUpTo="@id/homeFragment" >
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/successfulLoanFragment"
+        android:name="com.example.online_bank.view.SuccessfulLoanFragment"
+        android:label="fragment_successful_loan"
+        tools:layout="@layout/fragment_successful_loan" >
+        <action
+            android:id="@+id/action_successfulLoanFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/nav_graph" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="amount"
+            app:argType="integer"
+            android:defaultValue="-1" />
+        <argument
+            android:name="state"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
+    <fragment
+        android:id="@+id/loanInformationFragment"
+        android:name="com.example.online_bank.view.LoanInformationFragment"
+        android:label="fragment_loan_information"
+        tools:layout="@layout/fragment_loan_information" >
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+</navigation>

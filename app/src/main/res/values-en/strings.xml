@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Online Bank</string>
+    <string name="new_loan_condition_lastName">fgx</string>
+    <string name="loan_condition">fdgzg</string>
+    <string name="new_loan_condition_phone">gfd</string>
+    <string name="new_loan_condition_amount">gfd</string>
+    <string name="registration_text">gfdz</string>
+    <string name="percent_text">gfd</string>
+    <string name="period_text">gfdz</string>
+    <string name="login_password">gzdf</string>
+    <string name="registration_password">zgdf</string>
+    <string name="new_loan_condition">gzfd</string>
+    <string name="new_loan_condition_button">zgdf</string>
+    <string name="add_loan_button">zgfd</string>
+    <string name="max_amount_text">zgfd</string>
+    <string name="login_name">gzfd</string>
+    <string name="registration_name">zgf</string>
+    <string name="new_loan_condition_name">zg</string>
+    <string name="exit_button">zgfd</string>
+    <string name="login_text">zgf</string>
+    <string name="registration_button">zgfd</string>
+    <string name="login_button">zgfd</string>
+    <string name="percent_char">fgd</string>
+    <string name="month_text">gdf</string>
+    <string name="list_header">gfd</string>
+    <string name="rejected_text">Rejected</string>
+    <string name="registered_text">Registered</string>
+    <string name="approved_text">Approved</string>
+</resources>
