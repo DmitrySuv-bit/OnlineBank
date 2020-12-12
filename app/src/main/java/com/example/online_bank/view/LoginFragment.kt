@@ -1,6 +1,7 @@
 package com.example.online_bank.view
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.example.online_bank.App
 import com.example.online_bank.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
@@ -62,6 +64,10 @@ class LoginFragment : Fragment() {
             Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_registrationFragment)
         )
 
+        view.findViewById<FloatingActionButton>(R.id.welcomeButton)?.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_welcomeFragment)
+        )
+
         name?.doOnTextChanged { text, _, _, _ ->
             if (text?.length!! < 1) {
                 name?.error = "Заполните поле"
@@ -93,6 +99,8 @@ class LoginFragment : Fragment() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 view?.findNavController()?.navigate(R.id.action_loginFragment_to_homeFragment)
+
+                Log.d("sgfsf", view?.findNavController()?.graph.toString())
             }, {
                 password?.text = ""
                 password?.error = "Неверный логин или пароль"

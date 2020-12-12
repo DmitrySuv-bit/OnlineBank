@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.SuccessfulLoanFragment" >
+    tools:context=".view.SuccessfulLoanFragment">
 
     <TextView
         android:id="@+id/successfulLoanText"
@@ -14,7 +14,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:gravity="center"
-        android:text="Поздравляем, Ваш запрос на получение займа отправлен на расмотрение, Пожалуйста ожидайте."
+        android:text="@string/successful_loan_text"
         android:textColor="#000000"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,7 +28,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
-        android:text="Вернуться к списку займов"
+        android:text="@string/successful_loan_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +54,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="id: "
+        android:text="@string/id_text"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="@+id/textView29"
         app:layout_constraintTop_toBottomOf="@+id/textView29" />
@@ -67,14 +67,14 @@
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView23"
         app:layout_constraintStart_toEndOf="@+id/textView23"
-        tools:text="id"/>
+        tools:text="id" />
 
     <TextView
         android:id="@+id/textView25"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Сумма займа: "
+        android:text="@string/amount_text"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="@+id/textView23"
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
@@ -87,14 +87,14 @@
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView25"
         app:layout_constraintStart_toEndOf="@+id/textView25"
-        tools:text="Сумма"/>
+        tools:text="Сумма" />
 
     <TextView
         android:id="@+id/textView27"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="Статус: "
+        android:text="@string/state_text"
         android:textColor="#000000"
         app:layout_constraintStart_toStartOf="@+id/textView25"
         app:layout_constraintTop_toBottomOf="@+id/textView25" />
@@ -107,14 +107,14 @@
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView27"
         app:layout_constraintStart_toEndOf="@+id/textView27"
-        tools:text="Статус"/>
+        tools:text="Статус" />
 
     <TextView
         android:id="@+id/textView29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Кратная информация о займе: "
+        android:text="@string/loan_information1"
         android:textColor="#000000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -129,7 +129,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:gravity="center"
-        android:text="Подробную информацию о займе можете найти с помощью иденфикационного номера (id) в списке займев в разделе указанов статуке займа"
+        android:text="@string/loan_information2"
         android:textColor="#009688"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -59,6 +59,8 @@ class HomeFragment : Fragment() {
             view.findNavController().navigate(R.id.action_homeFragment_to_newLoanFragment)
         }
 
+        view.findViewById<FloatingActionButton>(R.id.addLoanButton)
+
         view.findViewById<FloatingActionButton>(R.id.exitButton).setOnClickListener {
             homeViewModel.logOut()
             view.findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
