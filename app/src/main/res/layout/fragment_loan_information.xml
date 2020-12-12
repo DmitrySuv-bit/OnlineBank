@@ -25,11 +25,11 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:text="Персоональные данные клиента:"
         android:textColor="#000000"
-        android:textSize="18sp"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
@@ -37,118 +37,118 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Имя: "
+        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView12"
         app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Фамилия: "
+        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Телефон: "
+        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView14"
         app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="24dp"
         android:text="Информация о займе: "
         android:textColor="#000000"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="@+id/textView12"
         app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="id: "
+        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView16"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
 
     <TextView
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Сумма: "
+        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView17"
         app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
     <TextView
         android:id="@+id/textView19"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Проценты: "
+        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView18"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
 
     <TextView
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Период: "
+        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView19"
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <TextView
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Дата займа: "
+        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView20"
         app:layout_constraintTop_toBottomOf="@+id/textView20" />
 
     <TextView
         android:id="@+id/textView22"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Статус: "
+        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView32"
         app:layout_constraintTop_toBottomOf="@+id/textView32" />
 
     <TextView
         android:id="@+id/loanInformationFirstName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textColor="#EC6C6C"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView13"
         app:layout_constraintStart_toEndOf="@+id/textView13"
         tools:text="text" />
@@ -157,7 +157,8 @@
         android:id="@+id/loanInformationLastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textColor="#EC6C6C"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView14"
         app:layout_constraintStart_toEndOf="@+id/textView14"
         tools:text="text" />
@@ -166,16 +167,18 @@
         android:id="@+id/loanInformationPhoneNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="#EC6C6C"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView15"
         app:layout_constraintStart_toEndOf="@+id/textView15"
-        tools:text="text"
-        android:textSize="16sp" />
+        tools:text="text" />
 
     <TextView
         android:id="@+id/loanInformationID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textColor="#EC6C6C"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView17"
         app:layout_constraintStart_toEndOf="@+id/textView17"
         tools:text="text" />
@@ -184,7 +187,8 @@
         android:id="@+id/loanInformationAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textColor="#EC6C6C"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView18"
         app:layout_constraintStart_toEndOf="@+id/textView18"
         tools:text="text" />
@@ -193,7 +197,8 @@
         android:id="@+id/loanInformationPercent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textColor="#EC6C6C"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView19"
         app:layout_constraintStart_toEndOf="@+id/textView19"
         tools:text="text" />
@@ -202,7 +207,8 @@
         android:id="@+id/loanInformationPeriod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textColor="#EC6C6C"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView20"
         app:layout_constraintStart_toEndOf="@+id/textView20"
         tools:text="text" />
@@ -211,7 +217,8 @@
         android:id="@+id/loanInformationDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textColor="#EC6C6C"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView21"
         app:layout_constraintStart_toEndOf="@+id/textView21"
         tools:text="text" />
@@ -220,27 +227,29 @@
         android:id="@+id/loanInformationState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView22"
         app:layout_constraintStart_toEndOf="@+id/textView22"
         tools:text="text"
-        android:textSize="16sp" />
+        android:textColor="#EC6C6C" />
 
     <TextView
         android:id="@+id/textView32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Время займа: "
+        android:textColor="@color/black"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView21"
         app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <TextView
         android:id="@+id/loanInformationTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textColor="#EC6C6C"
+        android:textSize="18sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView32"
         app:layout_constraintStart_toEndOf="@+id/textView32"
         tools:text="text" />
@@ -249,8 +258,8 @@
         android:id="@+id/textView34"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
-        android:text="рублей"
+        android:layout_marginStart="4dp"
+        android:text="@string/currency_text"
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/loanInformationAmount"
         app:layout_constraintStart_toEndOf="@+id/loanInformationAmount" />
@@ -259,7 +268,7 @@
         android:id="@+id/textView35"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="4dp"
         android:text="@string/percent_char"
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/loanInformationPercent"
@@ -269,7 +278,7 @@
         android:id="@+id/textView36"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="2dp"
+        android:layout_marginStart="4dp"
         android:text="@string/month_text"
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/loanInformationPeriod"

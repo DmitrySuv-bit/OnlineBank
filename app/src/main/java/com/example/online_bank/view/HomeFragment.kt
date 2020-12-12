@@ -1,6 +1,5 @@
 package com.example.online_bank.view
 
-import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -19,18 +18,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
-
 class HomeFragment : Fragment() {
     private val homeViewModel = App.injectHomeViewModel()
     private var disposable: Disposable? = null
-    private val itemAdapter = LoanItemAdapter {
-        view?.findNavController()?.navigate(
-            HomeFragmentDirections.actionHomeFragmentToLoanInformationFragment(it)
-        )
-    }
-    private var rejectedLoanList = mutableListOf<LoansListItem>()
-    private var registeredLoanList = mutableListOf<LoansListItem>()
-    private var approvedLoanList = mutableListOf<LoansListItem>()
 
     private val approvedButton: TextView?
         get() = view?.findViewById(R.id.approvedButton)
@@ -40,6 +30,16 @@ class HomeFragment : Fragment() {
 
     private val rejectedButton: TextView?
         get() = view?.findViewById(R.id.rejectedButton)
+
+    private var rejectedLoanList = mutableListOf<LoansListItem>()
+    private var registeredLoanList = mutableListOf<LoansListItem>()
+    private var approvedLoanList = mutableListOf<LoansListItem>()
+
+    private val itemAdapter = LoanItemAdapter {
+        view?.findNavController()?.navigate(
+            HomeFragmentDirections.actionHomeFragmentToLoanInformationFragment(it)
+        )
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -66,52 +66,39 @@ class HomeFragment : Fragment() {
 
         approvedButton?.setOnClickListener {
             if (approvedLoanList.isNotEmpty()) {
-                approvedButton?.setBackgroundColor(resources.getColor(R.color.active_button, null))
-                registeredButton?.setBackgroundColor(resources.getColor(R.color.no_active_button, null))
-                rejectedButton?.setBackgroundColor(resources.getColor(R.color.no_active_button, null))
+                setActiveButton(approvedButton)
+                setNoActiveButton(registeredButton)
+                setNoActiveButton(rejectedButton)
 
                 itemAdapter.updateItem(approvedLoanList)
             } else {
-                Toast.makeText(
-                    context,
-                    "Пусто",
-                    Toast.LENGTH_LONG
-                ).show()
+                getToast("Пусто")
             }
         }
 
         registeredButton?.setOnClickListener {
             if (registeredLoanList.isNotEmpty()) {
-                approvedButton?.setBackgroundColor(resources.getColor(R.color.no_active_button,null))
-                registeredButton?.setBackgroundColor(resources.getColor(R.color.active_button,null))
-                rejectedButton?.setBackgroundColor(resources.getColor(R.color.no_active_button,null))
+                setNoActiveButton(approvedButton)
+                setActiveButton(registeredButton)
+                setNoActiveButton(rejectedButton)
 
                 itemAdapter.updateItem(registeredLoanList)
             } else {
-                Toast.makeText(
-                    context,
-                    "Пусто",
-                    Toast.LENGTH_LONG
-                ).show()
+                getToast("Пусто")
             }
         }
 
         rejectedButton?.setOnClickListener {
             if (rejectedLoanList.isNotEmpty()) {
-                approvedButton?.setBackgroundColor(resources.getColor(R.color.no_active_button,null))
-                registeredButton?.setBackgroundColor(resources.getColor(R.color.no_active_button,null))
-                rejectedButton?.setBackgroundColor(resources.getColor(R.color.active_button,null))
+                setNoActiveButton(approvedButton)
+                setNoActiveButton(registeredButton)
+                setActiveButton(rejectedButton)
 
                 itemAdapter.updateItem(rejectedLoanList)
             } else {
-                Toast.makeText(
-                    context,
-                    "Пусто",
-                    Toast.LENGTH_LONG
-                ).show()
+                getToast("Пусто")
             }
         }
-
 
         if (homeViewModel.isAuthorization()) {
             showListLoans()
@@ -123,22 +110,26 @@ class HomeFragment : Fragment() {
     private fun showListLoans() {
         disposable = homeViewModel.getLoansList()
             .map {
-                rejectedLoanList = it.filter { item ->
-                    item.state == "REJECTED"
-                }.sortedByDescending {sorted ->
-                    sorted.amount
-                } as MutableList<LoansListItem>
+                if (it.isNotEmpty()) {
+                    rejectedLoanList = it.filter { item ->
+                        item.state == "REJECTED"
+                    }.sortedByDescending { sorted ->
+                        sorted.amount
+                    } as MutableList<LoansListItem>
 
-                registeredLoanList = it.filter { item ->
-                    item.state == "REGISTERED"
-                }.sortedByDescending {sorted ->
-                    sorted.amount
-                } as MutableList<LoansListItem>
+                    registeredLoanList = it.filter { item ->
+                        item.state == "REGISTERED"
+                    }.sortedByDescending { sorted ->
+                        sorted.amount
+                    } as MutableList<LoansListItem>
 
-                it.filter { item ->
-                    item.state == "APPROVED"
-                }.sortedByDescending {sorted ->
-                    sorted.amount
+                    it.filter { item ->
+                        item.state == "APPROVED"
+                    }.sortedByDescending { sorted ->
+                        sorted.amount
+                    }
+                } else {
+                    it
                 }
             }
             .subscribeOn(Schedulers.io())
@@ -149,10 +140,27 @@ class HomeFragment : Fragment() {
                 itemAdapter.updateItem(it)
 
                 if (it.isNotEmpty()) {
-                    approvedButton?.setBackgroundColor(resources.getColor(R.color.active_button,null))
+                    setActiveButton(approvedButton)
                 }
             }, {
+                getToast("Ошибка авторизации")
             })
+    }
+
+    private fun setActiveButton(button: TextView?) {
+        button?.setBackgroundColor(resources.getColor(R.color.active_button, null))
+    }
+
+    private fun setNoActiveButton(button: TextView?) {
+        button?.setBackgroundColor(resources.getColor(R.color.no_active_button, null))
+    }
+
+    private fun getToast(text: String) {
+        Toast.makeText(
+            context,
+            text,
+            Toast.LENGTH_LONG
+        ).show()
     }
 
     override fun onDestroy() {

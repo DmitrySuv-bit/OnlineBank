@@ -27,4 +27,5 @@
     <string name="rejected_text">Rejected</string>
     <string name="registered_text">Registered</string>
     <string name="approved_text">Approved</string>
+    <string name="currency_text">rub</string>
 </resources>

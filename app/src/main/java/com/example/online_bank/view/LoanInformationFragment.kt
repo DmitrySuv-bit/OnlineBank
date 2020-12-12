@@ -21,7 +21,6 @@ class LoanInformationFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         return inflater.inflate(R.layout.fragment_loan_information, container, false)
     }
 
@@ -29,37 +28,39 @@ class LoanInformationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val id = arguments?.let { LoanInformationFragmentArgs.fromBundle(it).id }
-        getLoanData(view, id!!)
 
+        getLoanData(id!!)
     }
 
-    private fun getLoanData(view: View, id: Int) {
+    private fun getLoanData(id: Int) {
         disposable = loanInformationViewModel.getLoanData(id)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
-                view.findViewById<TextView>(R.id.loanInformationFirstName).text = it.firstName
+                view?.findViewById<TextView>(R.id.loanInformationFirstName)?.text = it.firstName
 
-                view.findViewById<TextView>(R.id.loanInformationLastName).text = it.lastName
+                view?.findViewById<TextView>(R.id.loanInformationLastName)?.text = it.lastName
 
-                view.findViewById<TextView>(R.id.loanInformationPhoneNumber).text = it.phoneNumber
+                view?.findViewById<TextView>(R.id.loanInformationPhoneNumber)?.text = it.phoneNumber
 
-                view.findViewById<TextView>(R.id.loanInformationID).text = it.id.toString()
+                view?.findViewById<TextView>(R.id.loanInformationID)?.text = it.id.toString()
 
-                view.findViewById<TextView>(R.id.loanInformationAmount).text = it.amount.toString()
+                view?.findViewById<TextView>(R.id.loanInformationAmount)?.text =
+                    it.amount.toString()
 
-                view.findViewById<TextView>(R.id.loanInformationPercent).text =
+                view?.findViewById<TextView>(R.id.loanInformationPercent)?.text =
                     it.percent.toString()
 
-                view.findViewById<TextView>(R.id.loanInformationPeriod).text = it.period.toString()
+                view?.findViewById<TextView>(R.id.loanInformationPeriod)?.text =
+                    it.period.toString()
 
-                view.findViewById<TextView>(R.id.loanInformationDate).text =
+                view?.findViewById<TextView>(R.id.loanInformationDate)?.text =
                     it.date.substring(0, it.date.indexOf("T"))
 
-                view.findViewById<TextView>(R.id.loanInformationTime).text =
+                view?.findViewById<TextView>(R.id.loanInformationTime)?.text =
                     it.date.substring(it.date.indexOf("T") + 1, it.date.indexOf("."))
 
-                view.findViewById<TextView>(R.id.loanInformationState).text = it.state
+                view?.findViewById<TextView>(R.id.loanInformationState)?.text = it.state
             }, {
                 Toast.makeText(
                     context,

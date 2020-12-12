@@ -33,6 +33,5 @@ class SuccessfulLoanFragment : Fragment() {
         view.findViewById<Button>(R.id.successfulLoanButton).setOnClickListener {
             view.findNavController().navigate(R.id.action_successfulLoanFragment_to_homeFragment)
         }
-
     }
 }
