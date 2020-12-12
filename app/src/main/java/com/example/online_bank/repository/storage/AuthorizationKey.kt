@@ -1,7 +1,6 @@
 package com.example.online_bank.repository.storage
 
 import android.content.Context
-import com.example.online_bank.App
 
 class AuthorizationKey(private val myContext: Context) {
     private companion object {

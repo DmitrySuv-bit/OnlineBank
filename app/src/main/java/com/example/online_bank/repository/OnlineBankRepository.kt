@@ -23,8 +23,18 @@ class OnlineBankRepository(
         return apiService.postRegistration(LoginAndRegistrationData(name, password))
     }
 
-    fun postLoans(amount: Int, firstName: String, lastName: String, percent: Double, period: Int, phoneNumber: String): Observable<LoanData> {
-        return apiService.postLoans(token.getKey()!!, NewLoanData(amount, firstName, lastName, percent, period, phoneNumber))
+    fun postLoans(
+        amount: Int,
+        firstName: String,
+        lastName: String,
+        percent: Double,
+        period: Int,
+        phoneNumber: String
+    ): Observable<LoanData> {
+        return apiService.postLoans(
+            token.getKey()!!,
+            NewLoanData(amount, firstName, lastName, percent, period, phoneNumber)
+        )
     }
 
     fun getLoanData(id: Int): Observable<LoanData> {
@@ -35,7 +45,7 @@ class OnlineBankRepository(
         return apiService.getLoansList(token.getKey()!!)
     }
 
-    fun getLoanConditions() : Observable<LoanConditionsData> {
+    fun getLoanConditions(): Observable<LoanConditionsData> {
         return apiService.getLoanConditions(token.getKey()!!)
     }
 }

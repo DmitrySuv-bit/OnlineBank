@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C9F3F9FB"
     tools:context="com.example.online_bank.view.HomeFragment">
 
     <View

@@ -1,7 +1,6 @@
 package com.example.online_bank.view
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -19,10 +18,6 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
 class LoginFragment : Fragment() {
-    private companion object {
-        const val NAME_KEY = "com.example.online_bank.view.name"
-    }
-
     private val loginViewModel = App.injectLoginViewModel()
     private var disposable: Disposable? = null
 
@@ -99,8 +94,6 @@ class LoginFragment : Fragment() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 view?.findNavController()?.navigate(R.id.action_loginFragment_to_homeFragment)
-
-                Log.d("sgfsf", view?.findNavController()?.graph.toString())
             }, {
                 password?.text = ""
                 password?.error = "Неверный логин или пароль"

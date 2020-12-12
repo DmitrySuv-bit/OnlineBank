@@ -94,7 +94,7 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
-            app:popUpTo="@id/homeFragment"></action>
+            app:popUpTo="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/successfulLoanFragment"

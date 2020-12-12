@@ -1,16 +1,13 @@
 package com.example.online_bank.view.recycler
 
-import android.util.Log
 import android.view.View
 import android.widget.TextView
-import androidx.cardview.widget.CardView
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintSet
 import androidx.recyclerview.widget.RecyclerView
 import com.example.online_bank.R
 import com.example.online_bank.repository.data.response.LoansListItem
 
-class LoanItemViewHolder(view: View, private val clickListener: (Int) -> Unit) : RecyclerView.ViewHolder(view) {
+class LoanItemViewHolder(view: View, private val clickListener: (Int) -> Unit) :
+    RecyclerView.ViewHolder(view) {
     private var amount: TextView = view.findViewById(R.id.loanAmount)
     private var percent: TextView = view.findViewById(R.id.loanPercent)
     private var period: TextView = view.findViewById(R.id.loanPeriod)

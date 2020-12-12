@@ -6,7 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.online_bank.R
 import com.example.online_bank.repository.data.response.LoansListItem
 
-class LoanItemAdapter(private val clickListener: (Int) -> Unit) : RecyclerView.Adapter<LoanItemViewHolder>() {
+class LoanItemAdapter(private val clickListener: (Int) -> Unit) :
+    RecyclerView.Adapter<LoanItemViewHolder>() {
     private val itemsList = mutableListOf<LoansListItem>()
 
     fun updateItem(newItem: List<LoansListItem>) {
