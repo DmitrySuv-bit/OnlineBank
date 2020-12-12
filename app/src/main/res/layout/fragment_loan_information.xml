@@ -13,6 +13,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
+        android:gravity="center"
         android:text="@string/loan_information3"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -260,6 +261,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:text="@string/currency_text"
+        android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/loanInformationAmount"
         app:layout_constraintStart_toEndOf="@+id/loanInformationAmount" />
@@ -270,6 +272,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:text="@string/percent_char"
+        android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/loanInformationPercent"
         app:layout_constraintStart_toEndOf="@+id/loanInformationPercent" />
@@ -280,6 +283,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:text="@string/month_text"
+        android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/loanInformationPeriod"
         app:layout_constraintStart_toEndOf="@+id/loanInformationPeriod" />

@@ -24,7 +24,7 @@
     <string name="registered_text">Регистрируются</string>
     <string name="approved_text">Утвержденные</string>
     <string name="currency_text">руб</string>
-    <string name="successful_loan_text">Поздравляем, Ваш запрос на получение займа отправлен на рассмотрение.</string>
+    <string name="successful_loan_text">Ваш запрос на получение займа отправлен на рассмотрение.</string>
     <string name="successful_loan_button">Вернуться к списку займов</string>
     <string name="id_text">id:</string>
     <string name="amount_text">Сумма займа:</string>
