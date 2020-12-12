@@ -103,12 +103,18 @@ class NewLoanFragment : Fragment() {
         }
 
         amount?.doOnTextChanged { text, _, _, _ ->
-            if (text?.toString()?.toInt()!! > maxAmount?.text.toString().toInt()) {
-                amount?.error = "Превышен лимит"
+            when {
+                text.isNullOrBlank() -> {
+                    amount?.error = "Заполните поле"
+                    isAmountInputCondition = false
+                }
 
-                isAmountInputCondition = false
-            } else {
-                isAmountInputCondition = true
+                text.toString().toInt() > maxAmount?.text.toString().toInt() -> {
+                    amount?.error = "Превышен лимит"
+                    isAmountInputCondition = false
+                }
+
+                else -> isAmountInputCondition = true
             }
 
             allowDispatch()

@@ -34,8 +34,6 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
-
-
         retrofit = Retrofit.Builder()
             .addConverterFactory(ScalarsConverterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
