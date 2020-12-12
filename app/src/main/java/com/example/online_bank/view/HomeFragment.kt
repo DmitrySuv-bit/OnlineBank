@@ -110,26 +110,22 @@ class HomeFragment : Fragment() {
     private fun showListLoans() {
         disposable = homeViewModel.getLoansList()
             .map {
-                if (it.isNotEmpty()) {
-                    rejectedLoanList = it.filter { item ->
-                        item.state == "REJECTED"
-                    }.sortedByDescending { sorted ->
-                        sorted.amount
-                    } as MutableList<LoansListItem>
+                rejectedLoanList.addAll(it.filter { item ->
+                    item.state == "REJECTED"
+                }.sortedByDescending { sorted ->
+                    sorted.amount
+                })
 
-                    registeredLoanList = it.filter { item ->
-                        item.state == "REGISTERED"
-                    }.sortedByDescending { sorted ->
-                        sorted.amount
-                    } as MutableList<LoansListItem>
+                registeredLoanList.addAll(it.filter { item ->
+                    item.state == "REGISTERED"
+                }.sortedByDescending { sorted ->
+                    sorted.amount
+                })
 
-                    it.filter { item ->
-                        item.state == "APPROVED"
-                    }.sortedByDescending { sorted ->
-                        sorted.amount
-                    }
-                } else {
-                    it
+                it.filter { item ->
+                    item.state == "APPROVED"
+                }.sortedByDescending { sorted ->
+                    sorted.amount
                 }
             }
             .subscribeOn(Schedulers.io())

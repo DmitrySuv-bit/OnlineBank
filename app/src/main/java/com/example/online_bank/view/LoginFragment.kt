@@ -17,6 +17,10 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
 class LoginFragment : Fragment() {
+    private companion object {
+        const val NAME_KEY = "com.example.online_bank.view.name"
+    }
+
     private val loginViewModel = App.injectLoginViewModel()
     private var disposable: Disposable? = null
 
@@ -37,12 +41,18 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_login, container, false)
+
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         name?.text = arguments?.let { LoginFragmentArgs.fromBundle(it).nameLogin }
+
+        isNameInputCondition = name?.text?.length!! >= 1
+
+        allowDispatch()
 
         view.findViewById<Button>(R.id.loginButton).setOnClickListener {
             logIn()
